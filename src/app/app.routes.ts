@@ -54,6 +54,6 @@ export const routes: Routes = [
     { path: 'checkoutconfirm', component: CheckoutconfirmComponent },
     { path: 'wishlist', component: WishlistComponent },
     { path: 'compare', component: CompareComponent },
-    { path: 'productdetail', component: ProductdetailComponent },
+    { path: 'product/:id', component: ProductdetailComponent },
     { path: '**', component: NotfoundComponent }
 ];

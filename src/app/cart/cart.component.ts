@@ -52,4 +52,9 @@ export class CartComponent implements OnInit {
     }
     this.route.navigate(['/checkout'])
   }
+
+  removeItem(id:number) {
+    this.cartService.removeFromCart(id)
+
+  }
 }

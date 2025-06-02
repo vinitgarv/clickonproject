@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { OverviewComponent } from './overview/overview.component';
 import { InformationComponent } from './information/information.component';
-import { ProductsComponent } from '../home/products/products.component';
+
 import { ProductcategoryComponent } from '../home/productcategory/productcategory.component';
+
+
 
 @Component({
   selector: 'app-productdetail',
@@ -10,6 +12,6 @@ import { ProductcategoryComponent } from '../home/productcategory/productcategor
   templateUrl: './productdetail.component.html',
   styleUrl: './productdetail.component.css'
 })
-export class ProductdetailComponent {
+export class ProductdetailComponent  {
 
 }

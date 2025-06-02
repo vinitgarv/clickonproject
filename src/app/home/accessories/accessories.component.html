@@ -27,7 +27,7 @@
 
             <div class="md:grid md:grid-cols-4 md:gap-4 grid grid-cols-2">
                 @for (item of products; track $index) {
-                <div class="border border-gray-300 p-4 rounded flex flex-col gap-4">
+                <div class="border border-gray-300 p-4 rounded flex flex-col gap-4" [routerLink]="['/product',item.id]">
                     <div>
                         <img src="{{ item.image }}" alt="" class="w-[202px] h-[172px]" />
                     </div>

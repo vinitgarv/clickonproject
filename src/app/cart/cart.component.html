@@ -16,7 +16,7 @@
       @for (prod of product; track prod.id) {
       <div *ngIf="prod.quantity >= 1" class="flex gap-4 p-6 items-center">
         <div class="md:w-[50%] flex gap-3 items-center">
-          <app-cross></app-cross>
+          <app-cross (click)="removeItem(prod.id)"></app-cross>
           <img [src]="prod.image" alt="" class="w-16 h-16 object-contain" />
           <p class="text-sm text-[#191C1F] font-normal">{{ prod.title }}</p>
         </div>

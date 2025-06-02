@@ -51,4 +51,8 @@ export class ProductService {
     getacc(): any[] {
     return this.products.filter(p => p.type === 'acc');
   }
+
+  getProductById(id:number) {
+    return this.products.find(p => p.id === id);
+  }
 }

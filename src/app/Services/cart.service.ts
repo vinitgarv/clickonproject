@@ -34,18 +34,21 @@ export class CartService {
   this.totalItemsSubject.next(uniqueCount);
   }
 
-  addToCart(product: any) {
-    const currentCart = this.getCartItems();
-    const index = currentCart.findIndex(p => p.id === product.id);
-    if (index > -1) {
-      currentCart[index].quantity += 1;
-    } else {
-      currentCart.push({ ...product, quantity: 1 });
-    }
-    this.cartItemsSubject.next([...currentCart]);
-    this.updateTotalItemCount(currentCart);
-    this.updateLocalStorage(currentCart);
+addToCart(product: any) {
+  const currentCart = this.getCartItems();
+  const index = currentCart.findIndex(p => p.id === product.id);
+
+  if (index > -1) {
+    currentCart[index].quantity += product.quantity;
+  } else {
+    currentCart.push({ ...product });
   }
+
+  this.cartItemsSubject.next([...currentCart]);
+  this.updateTotalItemCount(currentCart);
+  this.updateLocalStorage(currentCart);
+}
+
 
   removeFromCart(productId: number) {
     const updatedCart = this.getCartItems().filter(item => item.id !== productId);
@@ -70,4 +73,10 @@ export class CartService {
     this.updateTotalItemCount([]);
     localStorage.removeItem(this.localStorageKey);
   }
+
+  isInCart(productId: number): boolean {
+  return this.cartItemsSubject.value.some(item => item.id === productId);
+}
+  
+
 }
