@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CatLeftComponent } from '../../categoryicon/catleft.component';
 import { CatRightComponent } from '../../categoryicon/catright.component';
 import { StarFillComponent } from '../../FooterIcon/starfill.component';
@@ -8,12 +8,13 @@ import { BasketComponent } from '../../FooterIcon/basket.component';
 
 
 import { CompareIconComponent } from '../../Bottomnavicon/compareicon.component';
-import { WishlistComponent } from '../../SocialIcons/wishlist.component';
+
 import { TrackIconComponent } from '../../Bottomnavicon/trackicon.component';
 import { TwitterComponent } from '../../SocialIcons/twitter.component';
 import { RedditComponent } from '../../SocialIcons/reddit.component';
 import { FacebookComponent } from '../../SocialIcons/facebook.component copy';
 import { PinterestComponent } from '../../SocialIcons/pinterest.component';
+import { ProductService } from '../../Services/product.service';
 
 
 @Component({
@@ -25,5 +26,8 @@ import { PinterestComponent } from '../../SocialIcons/pinterest.component';
   styleUrl: './overview.component.css'
 })
 export class OverviewComponent {
+
+  productService:ProductService = inject(ProductService);
+  product:any[]= this.productService.getAllProducts();
 
 }

@@ -73,7 +73,7 @@
       </div>
       <div class="grid grid-cols-2 grid-rows-4 p-4 md:grid md:grid-cols-4  md:grid-rows-2 md:p-0">
         @for (item of products; track $index) {
-        <div class="p-4 border border-[#E4E7E9]">
+        <div class="p-4 border border-[#E4E7E9]" (click)="addToCart(item)">
           <div class="flex flex-col">
             <div>
               <img src="{{item.image}}" alt="">

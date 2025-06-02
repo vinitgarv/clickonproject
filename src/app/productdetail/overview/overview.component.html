@@ -1,9 +1,11 @@
 <div class="container mx-auto max-w-[1440px] px-4 md:px-0 py-4 md:py-0">
+       @for (item of product; track $index) {
     <div class="flex  md:flex-row md:justify-between pt-8 pb-18 items-start flex-col md:w-full w-screen ">
+      
 
         <div class="flex flex-col gap-6">
 
-            <img src="laptopd.svg" alt="">
+            <img src="{{item.image}}" alt="">
 
             <div class="relative ">
                 <div class="flex gap-0 items-center mx-auto">
@@ -49,10 +51,7 @@
                         <p class="text-sm font-normal text-[#5F6C72]">(21,671 User feedback)</p>
                     </div>
 
-                    <h3 class="text-[20px] font-normal text-[#191C1F] w-screen md:w-full">2020 Apple MacBook Pro with
-                        Apple M1
-                        Chip
-                        (13-inch, 8GB RAM, <br> 256GB SSD Storage) - Space Gray
+                    <h3 class="text-[20px] font-normal text-[#191C1F] w-screen md:w-full">{{item.title}}
                     </h3>
                 </div>
 
@@ -78,8 +77,8 @@
 
             <div class="flex gap-3 items-center">
                 <div class="flex gap-1 items-center">
-                    <p class="txt-[24px] text-[#2DA5F3] font-semibold">$1699</p>
-                    <p class="line-through text-[18px] text-[#77878F] font-normal">$1999.00 </p>
+                    <p class="txt-[24px] text-[#2DA5F3] font-semibold">{{item.price}}</p>
+                    <p class="line-through text-[18px] text-[#77878F] font-normal">$1999</p>
 
                 </div>
 
@@ -190,4 +189,5 @@
             </div>
         </div>
     </div>
+ }
 </div>

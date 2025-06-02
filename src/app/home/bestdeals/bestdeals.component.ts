@@ -5,6 +5,7 @@ import { BasketComponent } from '../../FooterIcon/basket.component';
 import { StarFillComponent } from '../../FooterIcon/starfill.component';
 import { Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-bestdeals',
@@ -23,6 +24,16 @@ export class BestdealsComponent{
 productService:ProductService = inject(ProductService);
 
   products:any[] =  this.productService.getBestDeals();
+
+
+    cartService = inject(CartService);
+
+  // Assume products is loaded from ProductService
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
+
   
 
 
