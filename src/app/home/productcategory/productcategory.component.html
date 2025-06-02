@@ -1,0 +1,74 @@
+<div class="container mx-auto">
+    <div class="flex gap-6 py-18 flex-col md:flex-row ">
+        <div class=" flex flex-col gap-4 flex-1 ">
+
+            <div>
+                <p class="text-[16px] font-semibold text-[#191C1F]">FLASH SALE TODAY</p>
+            </div>
+
+            @for (item of product1; track $index) {
+            <app-productcomponent [item]="item"></app-productcomponent>
+            }
+        </div>
+
+
+        <div class="flex flex-col gap-4 flex-1">
+
+            <div>
+                <p class="text-[16px] font-semibold text-[#191C1F]">BEST SELLERS</p>
+            </div>
+
+
+            @for (item of product2; track $index) {
+            <app-productcomponent [item]="item"></app-productcomponent>}
+
+        </div>
+
+
+
+
+        <div class="flex flex-col gap-4 flex-1">
+
+            <div>
+                <p class="text-[16px] font-semibold text-[#191C1F]">TOP RATED</p>
+            </div>
+
+
+            @for (item of product3; track $index) {
+
+            <app-productcomponent [item]="item"></app-productcomponent>
+            }
+
+
+
+
+        </div>
+
+
+
+
+        <div class="flex flex-col gap-4 flex-1">
+
+            <div>
+                <p class="text-[16px] font-semibold text-[#191C1F]">NEW ARRIVAL</p>
+            </div>
+
+
+            @for (item of product4; track $index) {
+            <app-productcomponent [item]="item"></app-productcomponent>
+            }
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,77 @@
+<button (click)="toggleMenu()" class="md:hidden ">
+    <app-hamburger></app-hamburger>
+</button>
+
+<div *ngIf="menuOpen" class="md:hidden flex gap-6 items-center  px-4 py-4 ">
+
+    <nav class="space-y-1.5">
+        <a class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full" [routerLink]="'/dashboard'">
+            <app-sidebarhome></app-sidebarhome>
+
+            Dashboard
+        </a>
+
+        <a class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full" [routerLink]="'/dashboard/history'">
+            <app-sidebarorder></app-sidebarorder>
+            Order History
+        </a>
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full"
+            [routerLink]="'/dashboard/trackorder'">
+            <app-sidebartrack></app-sidebartrack>
+            Track Order
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full">
+            <app-sidebarcart></app-sidebarcart>
+
+            Shopping Cart
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full">
+            <app-sidebarwishlist></app-sidebarwishlist>
+            Wishlist
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full">
+
+            <app-sidebarcompare></app-sidebarcompare>
+            Compare
+        </a>
+
+
+        <a class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full" [routerLink]="'/dashboard/card'">
+
+            <app-sidebarcard></app-sidebarcard>
+
+            Cards &amp; Address
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full">
+
+            <app-sidebarhistory></app-sidebarhistory>
+            Browsing History
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full"
+            [routerLink]="'/dashboard/setting'">
+
+            <app-sidebarsetting></app-sidebarsetting>
+
+            Setting
+        </a>
+
+
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-[#5F6C72] w-full">
+
+            <app-sidebarlogout></app-sidebarlogout>
+            Log-out
+        </a>
+    </nav>
+
+</div>

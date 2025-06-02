@@ -1,0 +1,152 @@
+<div class="container mx-auto max-w-[1440px] px-4 md:px-0">
+    <div class="relative flex gap-18 pt-10 pb-18  ">
+        <div class="hidden md:block">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <div class="absolute top-0 left-0 bg-black text-white">
+            <app-sidebutton></app-sidebutton>
+        </div>
+
+
+        <div class="flex flex-col gap-4 md:w-full w-screen ">
+            <div class="border rounded-t  border-[#E4E7E9]">
+                <div class="flex justify-between border rounded-t items-center  border-[#E4E7E9] px-6 py-2">
+                    <p class="text-sm text-[#191C1F] font-medium">PAYMENT OPTION</p>
+                    <button class="flex gap-2 py-1.5 items-center">
+                        <span class="text-[#FA8232] text-sm font-semibold" (click)="openDialog()">Add Card</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.125 10H16.875" stroke="#FA8232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M11.25 4.375L16.875 10L11.25 15.625" stroke="#FA8232" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+
+                <div class="md:flex-row flex flex-col gap-6 p-6  ">
+                    <div class=" flex-1 flex flex-col gap-4  p-6 bg-[#1B6392] border rounded text-[#FFFFFF]">
+                        <div class="flex justify-between items-center">
+                            <h1>$87,583.00 USD</h1>
+                            <img src="DotsThree.svg" alt="">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h1> Card number</h1>
+                            <div class="flex gap-1.5">
+                                <p>**** **** **** 1761</p>
+                                <span>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.5">
+                                            <path d="M13.125 13.125H16.875V3.125H6.875V6.875" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.125 6.875H3.125V16.875H13.125V6.875Z" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <img src="Visa.svg" alt="">
+                            <h1>Kevin Gilbert</h1>
+                        </div>
+                    </div>
+                    <div class=" flex-1 p-6 flex flex-col gap-4  bg-[#2DB224] border rounded text-[#FFFFFF]">
+                        <div class="flex justify-between items-center">
+                            <h1>$95,400.00 USD</h1>
+                            <img src="DotsThree.svg" alt="">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h1> Card number</h1>
+                            <div class="flex gap-1.5">
+                                <p>**** **** **** 3814</p>
+                                <span>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.5">
+                                            <path d="M13.125 13.125H16.875V3.125H6.875V6.875" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.125 6.875H3.125V16.875H13.125V6.875Z" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <img src="mastercard.svg" alt="">
+                            <h1>Kevin Gilbert</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex-1"></div>
+
+                </div>
+
+            </div>
+
+            <div class="md:flex-row flex flex-col gap-4">
+                <div class="flex-1 border border-[#E4E7E9] rounded bg-[#FFFFFF] flex flex-col gap-6 pb-6 ">
+                    <div class="border-b border-[#E4E7E9]">
+                        <p class="ml-6 my-4 font-sans font-medium ">ACCOUNT INFO</p>
+                    </div>
+                    <div class="flex flex-col  pl-6 gap-2">
+                        <h1 class="font-sans text-[#191C1F] font-medium text-sm">Kevin Gilbert</h1>
+                        <p class="text-[#5F6C72] font-normal text-xs">East Tejturi Bazar, Word No. 04, Road No. <br>
+                            13/x, House no. 1320/C, Flat No. 5D, <br>
+                            Dhaka - 1200, Bangladesh
+                        </p>
+                        <p class="font-sans text-[#191C1F] font-bold tex-sm">Phone Number <span
+                                class="text-[#5F6C72] font-normal text-sm"> +1-202-555-0118</span></p>
+
+                        <p class="font-sans text-[#191C1F] font-bold text-sm">Email: <span
+                                class="text-[#5F6C72] font-normal text-sm"> kevin12345&#64;gmail.com</span></p>
+
+
+                    </div>
+                    <div class="pl-6">
+                        <button
+                            class="px-6 py-2  mt-2 text-[#2DA5F3] border rounded text-sm font-bold border-[#D5EDFD]">EDIT
+                            ADDRESS</button>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="flex-1 border border-[#E4E7E9] rounded bg-[#FFFFFF] flex flex-col gap-6 pb-6 ">
+                    <div class="border-b border-[#E4E7E9]">
+                        <p class="ml-6 my-4 font-sans font-medium ">SHIPPING ADDRESS</p>
+                    </div>
+                    <div class="flex flex-col  pl-6 gap-2">
+                        <h1 class="font-sans text-[#191C1F] font-medium text-sm">Kevin Gilbert</h1>
+                        <p class="text-[#5F6C72] font-normal text-xs">East Tejturi Bazar, Word No. 04, Road No. <br>
+                            13/x, House no. 1320/C, Flat No. 5D, <br>
+                            Dhaka - 1200, Bangladesh
+                        </p>
+                        <p class="font-sans text-[#191C1F] font-bold tex-sm">Phone Number <span
+                                class="text-[#5F6C72] font-normal text-sm"> +1-202-555-0118</span></p>
+
+                        <p class="font-sans text-[#191C1F] font-bold text-sm">Email: <span
+                                class="text-[#5F6C72] font-normal text-sm"> kevin12345&#64;gmail.com</span></p>
+
+
+                    </div>
+                    <div class="pl-6">
+                        <button
+                            class="px-6 py-2  mt-2 text-[#2DA5F3] border rounded text-sm font-bold border-[#D5EDFD]">EDIT
+                            ADDRESS</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

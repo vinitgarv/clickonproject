@@ -1,0 +1,124 @@
+<div class="container mx-auto max-w-[1440px] px-2 md:px-0 py-2 md:py-0">
+  <div class="py-18 flex md:gap-6 md:flex-row flex-col md:items-start">
+
+    <div class="flex flex-col gap-0 border border-[#E4E7E9] rounded md:w-[70%]">
+      <div class="py-5 px-6">
+        <h1 class="text-[18px] text-[#191C1F] font-semibold">Shopping Cart</h1>
+      </div>
+
+      <div class="flex gap-6 items-center py-2.5 px-6 border border-[#E4E7E9] bg-[#F2F4F5]">
+        <p class="w-[50%] text-xs text-[#475156] font-medium">PRODUCTS</p>
+        <p class="w-[16%] text-xs text-[#475156] font-medium">PRICE</p>
+        <p class="w-[16%] text-xs text-[#475156] font-medium">QUANTITY</p>
+        <p class="w-[16%] text-xs text-[#475156] font-medium">SUB-TOTAL</p>
+      </div>
+
+      @for (prod of product; track prod.id) {
+      <div *ngIf="prod.quantity >= 1" class="flex gap-4 p-6 items-center">
+        <div class="md:w-[50%] flex gap-3 items-center">
+          <app-cross></app-cross>
+          <img [src]="prod.image" alt="" class="w-16 h-16 object-contain" />
+          <p class="text-sm text-[#191C1F] font-normal">{{ prod.name }}</p>
+        </div>
+
+        <div class="w-[16%]">
+          <p class="text-sm text-[#475156] font-normal">${{ prod.price }}</p>
+        </div>
+
+        <div class="w-[26%] flex justify-between border border-[#E4E7E9] pr-6">
+          <button (click)="onMinus(prod)">
+            <app-minus></app-minus>
+          </button>
+          <p>{{ prod.quantity }}</p>
+          <button (click)="onplus(prod)">
+            <app-plus></app-plus>
+          </button>
+        </div>
+
+        <div class="w-[16%]">
+          <p class="text-sm text-[#475156] font-normal">${{ prod.price * prod.quantity }}</p>
+        </div>
+      </div>
+      }
+
+      <div class="flex justify-between p-4 md:p-6 border-t border-[#E4E7E9]">
+        <button class="flex gap-2 px-4 md:px-6 border rounded border-[#2DA5F3] text-sm py-2 text-[#2DA5F3] font-bold">
+          <span><app-lefticon></app-lefticon></span>
+          <p>RETURN TO SHOP</p>
+        </button>
+        <button class="px-6 border rounded border-[#2DA5F3] py-2 text-sm text-[#2DA5F3] font-bold">
+          UPDATE CART
+        </button>
+      </div>
+    </div>
+
+
+    <div class="flex flex-col gap-6 md:w-[30%]">
+
+      <div class="flex flex-col gap-0 border rounded border-[#E4E7E9]">
+        <div class="px-6 py-5">
+          <p class="text-[18px] text-[#191C1F] font-medium">Cart Totals</p>
+        </div>
+        <div class="flex flex-col gap-4 p-6">
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between">
+              <p class="text-sm text-[#5F6C72] font-normal">Sub-total</p>
+              <p class="text-sm text-[#191C1F] font-medium">
+                {{ product | cartTotal:'subtotal' }}
+              </p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm text-[#5F6C72] font-normal">Shipping</p>
+              <p class="text-sm text-[#191C1F] font-medium">Free</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm text-[#5F6C72] font-normal">Discount</p>
+              <p class="text-sm text-green-400 font-medium">
+                -${{ product | cartTotal:'discount' }}
+              </p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm text-[#5F6C72] font-normal">Tax</p>
+              <p class="text-sm text-[#191C1F] font-medium">
+                ${{ product | cartTotal:'tax' }}
+              </p>
+            </div>
+          </div>
+
+          <div class="text-[#E4E7E9]">
+            <hr />
+          </div>
+
+          <div class="flex justify-between">
+            <p class="text-[16px] text-[#191C1F] font-normal">Total</p>
+            <p class="text-[16px] text-[#191C1F] font-semibold">
+              ${{ product | cartTotal:'total' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-[#FA8232] mx-6 mb-6">
+          <button (click)="onClick()"
+            class="flex gap-3 py-2 px-8 text-[#FFFFFF] text-[16px] text-center font-bold items-center mx-auto">
+            PROCEED TO CHECKOUT
+            <span><app-rightarrowwhite></app-rightarrowwhite></span>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col gap-6 border rounded border-[#E4E7E9]">
+        <div class="border-b border-[#E4E7E9] px-6 py-5 text-[18px] text-[#191C1F] font-medium">Coupon Code</div>
+        <div class="flex flex-col gap-4 pb-6 px-6">
+          <div class="border border-[#E4E7E9] rounded">
+            <input type="text" placeholder="Email address"
+              class="text-sm text-[#77878F] font-normal pl-4 py-3 w-full" />
+          </div>
+          <div class="bg-[#2DA5F3] px-6 py-2 w-max">
+            <button class="text-sm text-[#FFFFFF] font-bold">APPLY COUPON</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

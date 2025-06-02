@@ -1,0 +1,289 @@
+<div class="container mx-auto max-w-[1440px] px-4 md:px-0 py-8 md:py-0">
+
+    <div class="relative flex gap-18  pt=10 pb-18">
+        <div class="hidden md:block">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <div class="absolute -top-8 left-0 bg-black text-white">
+            <app-sidebutton></app-sidebutton>
+        </div>
+
+
+        <div class="flex flex-col gap-6 w-full">
+            <div class="border border-[#E4E7E9] rounded flex flex-col gap-6 pb-6 ">
+                <div class="border border-[#E4E7E9] rounded-t pl-6 py-4 w-full">
+                    <p class="text-sm text-[#191c1f] font-medium">ACCOUNT SETTING</p>
+                </div>
+
+                <div class="md:flex-row flex flex-col gap-4 px-4">
+
+                    <div>
+                        <img src="profile.svg" alt="" class="mx-auto">
+                    </div>
+                    <div class="flex flex-col gap-6 w-full">
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Display Name</p>
+                                <input type="text" placeholder="Kevin"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Username</p>
+                                <input type="text" placeholder="Display name"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Full Name</p>
+                                <input type="text" placeholder="Kevin Gilbert"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Email</p>
+                                <input type="text" placeholder="Kevin.gilbert@gmail.com"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Secondary Email</p>
+                                <input type="text" placeholder="kevin12345@gmail.com"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Phone Number</p>
+                                <input type="text" placeholder="+1-202-555-0118"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-[2] flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Country/Region</p>
+                                <select name="" id=""
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                    <option value="Bangladesh">Bangladesh</option>
+                                </select>
+                            </div>
+
+
+                            <div class=" flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">State</p>
+                                <select name="" id=""
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                    <option value="Dhaka">Dhaka</option>
+                                </select>
+                            </div>
+
+                            <div class=" flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Zip Code</p>
+                                <input type="text" placeholder="1207"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+
+                        </div>
+                        <div>
+                            <app-savebutton></app-savebutton>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="md:flex-row  flex flex-col  gap-4 pb-6 w-full ">
+                <div class=" flex-1 flex flex-col gap-6  border border-[#E4E7E9] rounded ">
+                    <div class="border border-[#E4E7E9] rounded-t pl-6 py-4 w-full">
+                        <h1 class="text-sm text-[#191c1f] font-medium">SHIPPING ADDRESS</h1>
+                    </div>
+                    <div class="flex flex-col gap-6 p-6">
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">First Name</p>
+                                <input type="text" placeholder="Kevin"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Last Name</p>
+                                <input type="text" placeholder="Gilbert"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Company Name <span>(optional)</span></p>
+                            <input type="text" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Address</p>
+                            <input type="text" placeholder="Road no,12/x, House no 1320/c, Flat no.50"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Country</p>
+                            <select name="" id="" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                <option value="Bangladesh">Bangladesh</option>
+                            </select>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Region/State</p>
+                            <select name="" id="" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                <option value="all"> Select...</option>
+                            </select>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">City</p>
+                                <select name="" id=""
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                    <option value="Dhaka">Dhaka</option>
+                                </select>
+                            </div>
+
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Zip Code</p>
+                                <input type="text" placeholder="1207"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Email</p>
+                            <input type="text" placeholder="kevin12345@gmail.com"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Phone Number</p>
+                            <input type="text" placeholder="+91-8887827687"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div>
+                            <app-savebutton></app-savebutton>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class=" flex-1 flex flex-col gap-6  border border-[#E4E7E9] rounded ">
+                    <div class="border border-[#E4E7E9] rounded-t pl-6 py-4 w-full">
+                        <h1 class="text-sm text-[#191c1f] font-medium">BILLING ADDRESS</h1>
+                    </div>
+                    <div class="flex flex-col gap-6 p-6">
+                        <div class="md:flex-row  flex flex-col gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">First Name</p>
+                                <input type="text" placeholder="Kevin"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Last Name</p>
+                                <input type="text" placeholder="Gilbert"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Company Name <span>(optional)</span></p>
+                            <input type="text" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Address</p>
+                            <input type="text" placeholder="Road no,12/x, House no 1320/c, Flat no.50"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Country</p>
+                            <select name="" id="" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                <option value="Bangladesh">Bangladesh</option>
+                            </select>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Region/State</p>
+                            <select name="" id="" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                <option value="all"> Select...</option>
+                            </select>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">City</p>
+                                <select name="" id=""
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                                    <option value="Dhaka">Dhaka</option>
+                                </select>
+                            </div>
+
+                            <div class="flex-1 flex flex-col gap-2">
+                                <p class="text-sm text-[#191C1F] font-normal">Zip Code</p>
+                                <input type="text" placeholder="1207"
+                                    class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Email</p>
+                            <input type="text" placeholder="kevin12345@gmail.com"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-2">
+                            <p class="text-sm text-[#191C1F] font-normal">Phone Number</p>
+                            <input type="text" placeholder="+91-8887827687"
+                                class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                        </div>
+
+                        <div>
+                            <app-savebutton></app-savebutton>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-6 border border-[#E4E7E9] rounded pb-6 ">
+                <div class="border border-[#E4E7E9] rounded-t pl-6 py-4 w-full">
+                    <h1 class="text-sm text-[#191c1f] font-medium">CHANGE PASSWORD</h1>
+
+                </div>
+
+                <div class="flex flex-col gap-4 px-6">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-sm text-[#191C1F] font-normal">Current Password</p>
+                        <input type="text" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                    </div>
+
+                    <div class="flex flex-col gap-4  ">
+                        <p class="text-sm text-[#191C1F] font-normal">New Password</p>
+                        <input type="text" placeholder="8+ characters"
+                            class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                    </div>
+
+                    <div class="flex flex-col gap-4  ">
+                        <p class="text-sm text-[#191C1F] font-normal">Confirm Password</p>
+                        <input type="text" class="input-control text-sm text-[#475156] font-normal pl-4 py-3">
+                    </div>
+
+
+                    <div>
+                        <app-savebutton></app-savebutton>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

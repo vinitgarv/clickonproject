@@ -1,0 +1,193 @@
+<div class="container mx-auto max-w-[1440px] px-4 md:px-0 py-4 md:py-0">
+    <div class="flex  md:flex-row md:justify-between pt-8 pb-18 items-start flex-col md:w-full w-screen ">
+
+        <div class="flex flex-col gap-6">
+
+            <img src="laptopd.svg" alt="">
+
+            <div class="relative ">
+                <div class="flex gap-0 items-center mx-auto">
+                    <img src="01.svg" alt="" class="flex-1">
+                    <img src="02.svg" alt="" class="flex-1 ">
+                    <img src="03.svg" alt="" class="flex-1 ">
+                    <img src="04.svg" alt="" class="flex-1 hidden md:block ">
+                    <img src="05.svg" alt="" class="flex-1 hidden md:block ">
+                    <img src="06.svg" alt="" class="flex-1 hidden md:block">
+                </div>
+
+                <button onclick="scrollSlider('left')"
+                    class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-orange-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-10">
+                    <app-catleft></app-catleft>
+                </button>
+
+
+                <button onclick="scrollSlider('right')"
+                    class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-orange-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-10">
+                    <app-catright></app-catright>
+                </button>
+            </div>
+
+
+
+
+        </div>
+
+
+        <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                    <div class="flex gap-1.5 items-center">
+                        <div class="flex gap-0.5 items-center">
+                            <app-starfill></app-starfill>
+                            <app-starfill></app-starfill>
+                            <app-starfill></app-starfill>
+                            <app-starfill></app-starfill>
+                            <app-starfill></app-starfill>
+                        </div>
+
+                        <p class="text-sm font-bold text-[#191C1F]">4.7 Star Rating</p>
+                        <p class="text-sm font-normal text-[#5F6C72]">(21,671 User feedback)</p>
+                    </div>
+
+                    <h3 class="text-[20px] font-normal text-[#191C1F] w-screen md:w-full">2020 Apple MacBook Pro with
+                        Apple M1
+                        Chip
+                        (13-inch, 8GB RAM, <br> 256GB SSD Storage) - Space Gray
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
+                        <p class="flex-1 text-sm text-[#5F6C72] font-normal">Sku: <span
+                                class="text-sm font-semibold text-[#000000]">A264671 </span></p>
+                        <p class="flex-1 text-sm text-[#5F6C72] font-normal">Availability: <span
+                                class="text-sm font-semibold text-green-500">In Stock</span></p>
+                    </div>
+
+                    <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
+                        <p class="flex-1 text-sm text-[#5F6C72] font-normal">Brand: <span
+                                class="text-sm font-semibold text-[#000000]">Apple</span> </p>
+                        <p class="flex-1 text-sm text-[#5F6C72] font-normal">Category: <span
+                                class="text-sm font-semibold text-[#000000]">Electronics Devices</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="flex gap-3 items-center">
+                <div class="flex gap-1 items-center">
+                    <p class="txt-[24px] text-[#2DA5F3] font-semibold">$1699</p>
+                    <p class="line-through text-[18px] text-[#77878F] font-normal">$1999.00 </p>
+
+                </div>
+
+                <div class="bg-[#EFD33D] px-[10px] py-[5px]">
+                    <p class="text-sm font-semibold text-[#191C1F]">21% OFF</p>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col gap-4 pr-2 md:pr-0">
+                <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
+                    <div class="flex flex-col gap-2 flex-1">
+                        <p class="text-sm text-[#191C1F] font-normal ">Color</p>
+                        <div class="flex gap-2 items-center ">
+                            <img src="Color.svg" alt="">
+                            <img src="Color.svg" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col gap-2 flex-1">
+                        <p class="text-sm text-[#191C1F] font-normal ">Size</p>
+
+                        <select name="" id=""
+                            class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
+                            <option value="">14-inch Liquid Retina XDR display</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
+
+
+                    <div class="flex flex-col gap-2 flex-1">
+                        <p class="text-sm text-[#191C1F] font-normal">Memory</p>
+
+                        <select name="" id=""
+                            class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
+                            <option value="">16GB unified memory</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="flex flex-col gap-2 flex-1">
+                        <p class="text-sm text-[#191C1F] font-normal">Storage</p>
+
+                        <select name="" id=""
+                            class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
+                            <option value="">1TV SSD Storage</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="flex md:flex-row flex-col md:gap-4 md:items-center pt-3 pr-2 md:pr-0">
+                <div class="flex gap-5 items-center justify-center py-4 px-5 border border-[#E4E7E9] min-w-[164px] ">
+                    <app-minus></app-minus>
+                    <p class="text-[16px] text-[#475156] font-normal">01</p>
+                    <app-plus></app-plus>
+                </div>
+
+                <button
+                    class="flex gap-2 items-center justify-center bg-[#FA8232] px-8 py-4 md:min-w-[310px]  text-[16px] text-[#FFFFFF] font-bold">
+                    ADD TO CARD
+                    <app-basket></app-basket>
+                </button>
+
+                <button class="px-8 py-4 min-w-[142px] border border-[#FA8232] text-[16px] font-bold text-[#FA8232]">BUY
+                    NOW</button>
+            </div>
+
+
+            <div class="flex justify-between pb-2 items-center">
+                <div class="flex gap-6 items-center">
+                    <div class="flex gap-1.5 items-center">
+                        <app-trackicon></app-trackicon>
+                        <p class="text-sm text-[#475156] font-normal">Add to Wishlist</p>
+
+                    </div>
+
+                    <div class="flex gap-1.5 items-center">
+                        <app-compareicon></app-compareicon>
+                        <p class="text-sm text-[#475156] font-normal">Add to Wishlist</p>
+
+                    </div>
+                </div>
+
+                <div class="flex md:gap-3 gap-0 items-center pr-2 md:pr-0 ">
+                    <p class="text-sm text-[#475156] font-normal">Share Product</p>
+                    <app-twitter class="bg-black text-black stroke-black"></app-twitter>
+                    <app-facebook></app-facebook>
+                    <app-pinterest class="bg-black text-black stroke-black"></app-pinterest>
+                    <app-reddit class=""></app-reddit>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col gap-3 border-t border-[#E4E7E9] p-5">
+                <p class="text-sm text-[#191C1F] font-normal">100% Guarantee Safe Checkout </p>
+                <img src="Payment Method.svg" alt="" class="max-w-[312px]">
+
+            </div>
+        </div>
+    </div>
+</div>

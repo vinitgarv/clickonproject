@@ -1,0 +1,46 @@
+<div class="px-2 md:px-0 py-10 md:py-20 mx-auto container max-w-[424px]">
+    <div class="flex flex-col gap-6 p-8 shadow-[0px_8px_40px_0px_#000000] border rounded border-[#E4E7E9]">
+
+        <div class="flex flex-col gap-3 items-center w-full">
+            <h1 class="text-[20px] font-semibold text-[#191C1F]">Verify Your Email Address</h1>
+            <p class="text-center text-[#5F6C72] text-sm font-medium">Nam ultricies lectus a risus blandit elementum.
+                <br> Quisque arcu arcu, tristique a eu in diam.
+            </p>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <div class="flex justify-between">
+                <label for="" class="text-sm text-[#191C1F] font-normal">Verification Code</label>
+                <a href="" class="text-sm text-[#2DA5F3] font-medium">Resend Code</a>
+            </div>
+
+        </div>
+
+
+        <form action="" [formGroup]="verifyForm" (ngSubmit)="onVerify()" class="flex flex-col gap-2">
+
+            <div class="border border-[#E4E7E9]">
+                <input type="text" inputmode="numeric" class="py-2 w-full input-control" formControlName="code">
+            </div>
+
+
+
+            @if (code?.invalid && code?.touched) {
+            <div class="text-sm text-red-400">
+                {{code?.errors | error:'code'}}
+
+            </div>
+
+            }
+
+
+            <div class="bg-[#FA8232] px-6 py-4   flex items-center justify-center ">
+                <button class="flex items-center gap-2 text-sm font-bold text-white" (click)="onClick()" type="submit">
+                    VERIFY ME
+                    <span><app-righticon></app-righticon></span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>

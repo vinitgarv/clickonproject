@@ -1,0 +1,93 @@
+<div class="container mx-auto">
+  <div class="flex flex-col gap-6  py-18">
+    <div class="flex flex-col md:flex md:flex-row md:justify-between md:items-center">
+      <div class=" self-center md:flex md:flex-row md:gap-6 md:items-center ">
+        <h1 class="text-center   text-2xl font-semibold text-[#191C1F]">Best Deals</h1>
+        <div class="flex gap-3 items-center">
+          <p class="  text-sm font-normal text-[#000000]">Deal ends in</p>
+          <div class="flex gap-1.5 items-center py-1.5 px-3 bg-[#F3DE6D]">
+            <p class="text-base font-normal text-[#191C1F]">16d</p>
+            <p class="text-base font-normal text-[#191C1F]">:</p>
+            <p class="text-base font-normal text-[#191C1F]">21h</p>
+            <p class="text-base font-normal text-[#191C1F]">:</p>
+            <p class="text-base font-normal text-[#191C1F]">57m</p>
+            <p class="text-base font-normal text-[#191C1F]">:</p>
+            <p class="text-base font-normal text-[#191C1F]">23s</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2 py-1.5">
+        <p class="text-sm font-semibold text-[#2DA5F3]">Browse All Product</p>
+        <app-blueright></app-blueright>
+      </div>
+    </div>
+
+    <div class=" flex flex-col md:flex md:flex-row md:gap-0 ">
+      <div class="p-4 border border-[#E4E7E9] flex flex-col gap-5 md:max-w-[328px] ">
+        <div>
+          <img src="ps5.svg" alt="">
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-2">
+            <div class="flex gap-[2px] items-center">
+              <div class="flex items-center gap-0">
+                <app-starfill></app-starfill>
+                <app-starfill></app-starfill>
+                <app-starfill></app-starfill>
+                <app-starfill></app-starfill>
+                <app-starfill></app-starfill>
+              </div>
+              <div>
+                <p class="text-sm font-normal text-[#77878F]">(52,667)</p>
+              </div>
+            </div>
+            <p class="text-base font-normal text-[#191C1F]">Xbox Series S - 512GB SSD Console with Wireless Controller -
+              EU Versio...</p>
+          </div>
+          <div class="flex items-center gap-2 text-[20px]">
+            <span class="line-through text-[#9CA3AF]">$865.99</span>
+            <span class="text-[#2DA5F3] font-semibold">$442.12</span>
+          </div>
+          <div>
+            <p class="text-sm font-normal text-[#000000]">Games built using the Xbox Series X|S development kit showcase
+              unparalleled load times, visuals.</p>
+          </div>
+        </div>
+        <div class="flex gap-2 items-center">
+          <div class="p-3 bg-[#FFE7D6] rounded">
+            <app-likeicon></app-likeicon>
+          </div>
+
+          <div class="bg-[#FA8232]  px-6 py-3 ">
+            <button class="flex gap-2 items-center text-sm font-bold text-[#FFFFFF] " (click)="onClick()">
+              <app-basket></app-basket>
+              ADD TO CARD
+            </button>
+          </div>
+          <div class="flex gap-2 items-center ">
+            <div class="p-3 bg-[#FFE7D6] rounded">
+              <app-likeicon></app-likeicon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 grid-rows-4 p-4 md:grid md:grid-cols-4  md:grid-rows-2 md:p-0">
+        @for (item of products; track $index) {
+        <div class="p-4 border border-[#E4E7E9]">
+          <div class="flex flex-col">
+            <div>
+              <img src="{{item.image}}" alt="">
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <h1 class="text-sm font-normal text-[#191C1F]">{{item.title}}
+              </h1>
+              <p class="text-sm font-semibold text-[#2DA5F3]">{{item.price}}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

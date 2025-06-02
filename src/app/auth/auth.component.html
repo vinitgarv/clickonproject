@@ -1,0 +1,147 @@
+<div class="mx-auto container max-w-[424px]  px-2 md:px-0 py-10 md:py-20">
+
+    <div
+        class="bg-[#FFFFFF] border rounded border-[#E4E7E9]    flex flex-col gap-6 pb-6 shadow-[0px_8px_40px_0px_#000000]">
+
+
+        <div class="flex gap-0">
+            <button class="flex-1 border-b border-[#FA8232] py-4 text-[20px] font-semibold text-[#191C1F]">Sign
+                In</button>
+            <button (click)="onclick()"
+                class="flex-1 border-b border-[#E4E7E9] py-4 text-[20px] font-semibold text-[#77878F]">Sign
+                Up</button>
+        </div>
+
+        <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 px-8">
+
+                <div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="text-sm text-[#191C1F] font-normal  ">Email Address</label>
+                        <input type="email" class="py-2 input-control " formControlName="email">
+
+
+                    </div>
+
+                    @if (email?.invalid && email?.touched) {
+                    <div class="text-red-500">
+
+                        {{email?.errors | error:'email'}}
+                    </div>
+
+                    }
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between">
+                        <label for="password" class="text-sm text-[#191C1F] font-normal">Password</label>
+                        <a class="text-sm text-[#2DA5F3] font-medium" [routerLink]="'/forgot'">Forget Password</a>
+                    </div>
+
+                    <div>
+
+                        <div class=" flex justify-between border border-[#EAE7EF] items-center  ">
+                            <input [type]="showPassword ? 'text' : 'password'" class="w-[90%] py-2"
+                                formControlName="password" />
+                            <button (click)="showPassword = !showPassword" class="w-[10%] cursor-pointer">
+
+                                @if (showPassword) {
+                                <app-eyehide *ngIf="showPassword"></app-eyehide>
+                                }
+                                @else {
+                                <app-eye></app-eye>
+                                }
+                            </button>
+                        </div>
+
+                        @if ( password?.touched ) {
+
+                        <div class="text-sm text-red-600">
+
+                            {{ password?.errors | error:'password'}}
+
+
+
+                            <!-- 
+                            @if (!password.errors?.['tooShort']) {
+                            <p>Password
+                                must be at least 8
+                                characters.</p>
+                            }
+
+
+                            @if (!password.errors?.['missingUpperCase']) {
+                            <p>Must contain at least one
+                                uppercase
+                                letter.</p>
+                            }
+
+
+                            @if (!password.errors?.['missingNumber']) {
+                            <p>Must contain at least one
+                                number.</p>
+                            }
+
+
+
+                            @if (!password.errors?.['missingSpecialChar']) {
+                            <p>Must contain at least one
+                                special
+                                character.</p>
+                            } -->
+
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="bg-[#FA8232] px-6 py-2 mx-8 flex items-center justify-center">
+                <button class="flex items-center gap-2 text-sm font-bold text-white" type="submit">
+
+                    SIGN IN
+                    <!--  [disabled]="loginForm.invalid" -->
+                    <span><app-righticon></app-righticon></span>
+                </button>
+            </div>
+
+        </form>
+
+
+        <div class="flex flex-col gap-3 mx-8 ">
+
+            <div class="flex items-center gap-4 w-full">
+                <hr class="flex-grow border-gray-300" />
+                <span class="text-gray-500 text-sm whitespace-nowrap">or</span>
+                <hr class="flex-grow border-gray-300" />
+            </div>
+
+
+            <div class="relative border rounded border-[#E4E7E9] flex items-center justify-center px-4 py-2">
+                <app-google class="absolute left-4"></app-google>
+                <p class="text-sm font-normal text-[#475156]">Login with Google</p>
+            </div>
+
+            <div class=" relative border rounded border-[#E4E7E9] flex items-center justify-center px-4 py-2">
+                <app-apple class="absolute left-4"></app-apple>
+                <p class="text-sm font-normal text-[#475156]">Login with Apple</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- <span *ngIf="password?.errors?.['required']">Password is required.</span>
+      <span *ngIf="password?.errors?.['minlength']">
+        Password must be at least 6 characters.
+      </span> -->

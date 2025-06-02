@@ -1,0 +1,56 @@
+<div class="container mx-auto max-w-[1440px] px-4 m:px-0 py-4 md:py-0">
+
+    <div class=" py-18 md:flex-row md:justify-between  md:items-start md: w-full flex flex-col gap-4 ">
+
+        <div class="flex flex-col gap-10 max-w-[760px] w-full">
+            <div class="">
+                <h1 class="text-[32px] font-semibold text-[#191C1F]">Frequently Asked Questions </h1>
+            </div>
+            <div class="flex flex-col gap-6">
+                @for (item of topics; let i=$index; track i) {
+                <div class="border rounded border-[#E4E7E9]  p-5  justify-between flex gap-9 flex-1 ">
+                    <p class="text-[18px] font-medium text-[#191C1F]">{{item.topic}}
+                    </p>
+
+                    <app-plusicon (click)="onClick(i)"></app-plusicon>
+
+                </div>
+                @if (activeIndex === i) {
+                <p class="bg-[#FBF4CE]">{{item.desc}}</p>
+                }
+                }
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-6 p-8 bg-[#FBF4CE] max-w-[424px] w-full">
+            <div class="flex flex-col gap-3">
+                <h1 class="text-[18px] font-medium text-[#191C1F]">Don’t find your answer, Ask for support.</h1>
+                <p class="text-sm font-normal text-[#475156]">Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Sed molestie accumsan dui, non iaculis primis in faucibu raesent eget sem purus.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <div class="bg-[#FFFFFF] border rounded border-[#F7E99E] ">
+                    <input type="text" placeholder="Email address"
+                        class="text-sm font-normal text-[#77878F] w-full py-3 pl-3">
+                </div>
+                <div class="bg-[#FFFFFF] border rounded border-[#F7E99E] ">
+                    <input type="text" placeholder="Subject"
+                        class="text-sm font-normal text-[#77878F] w-full py-3 pl-3">
+                </div>
+                <div class="bg-[#FFFFFF] border rounded border-[#F7E99E] ">
+
+                    <textarea name="" id="" placeholder=" Message (Optional) "
+                        class=" text-sm font-normal text-[#77878F] w-full py-3 pl-3"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="flex gap-2 bg-[#FA8232] text-white font-bold text-sm  px-6 py-3 rounded">
+                    SEND MESSAGE
+                    <app-righticon></app-righticon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

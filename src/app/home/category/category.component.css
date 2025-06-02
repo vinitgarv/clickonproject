@@ -1,0 +1,4 @@
+.carousel ::ng-deep .slick-slide {
+    display: flex !important;
+    justify-content: center;
+}

@@ -1,0 +1,172 @@
+<div class="px-2 md:px-0 py-10 md:py-20 mx-auto container max-w-[424px]">
+
+    <div
+        class="bg-[#FFFFFF] border rounded border-[#E4E7E9]    flex flex-col gap-6 pb-6 shadow-[0px_8px_40px_0px_#000000]">
+
+
+        <div class="flex gap-0">
+            <button class="flex-1 border-b border-[#E4E7E9] py-4 text-[20px] font-semibold text-[#77878F]"
+                (click)="onLogin()">Sign
+                In</button>
+            <button class="flex-1 border-b border-[#FA8232] py-4 text-[20px] font-semibold text-[#191C1F]">Sign
+                Up</button>
+        </div>
+
+        <form action="" (ngSubmit)="onSignup()" [formGroup]="signupForm">
+            <div class="flex flex-col gap-4 px-8">
+
+
+                <div class="flex flex-col gap-2">
+                    <label for="name" class="text-sm text-[#191C1F] font-normal ">Name</label>
+                    <div>
+
+                        <input type="text" class="py-2 input-control w-full" formControlName="name">
+                        @if (name?.invalid && name?.touched) {
+                        <div class="text-red-500 text-sm">
+                            {{name?.errors | error:'name'}}
+                        </div>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-sm text-[#191C1F] font-normal ">Email Address</label>
+                    <div>
+
+                        <input type="email" class="py-2 input-control w-full" formControlName="email">
+                        @if (email?.invalid && email?.touched) {
+                        <div class="text-red-500 text-sm">
+                            {{email?.errors | error:'email'}}
+                        </div>
+                        }
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between">
+                        <label for="password" class="text-sm text-[#191C1F] font-normal">Password</label>
+
+                    </div>
+                    <div class=" flex justify-between border border-[#EAE7EF] items-center  ">
+                        <input [type]="showPassword ? 'text' : 'password'" class="w-[90%] py-2 pl-2"
+                            placeholder="8+ Characters" formControlName="password">
+                        <button (click)="showPassword = !showPassword" class="w-[10%] cursor-pointer">
+
+                            @if (showPassword) {
+                            <app-eyehide></app-eyehide>
+                            }
+                            @else {
+                            <app-eye></app-eye>
+                            }
+                        </button>
+                    </div>
+
+                    @if ( password?.touched) {
+                    <div class="text-sm text-red-600">
+                        {{ password?.errors | error:'password'}}
+
+                    </div>
+                    }
+                </div>
+
+
+                <div class="flex flex-col  ">
+                    <div class="flex justify-between ">
+                        <label for="confirmpassword" class="text-sm text-[#191C1F] font-normal"> Confirm
+                            Password</label>
+
+                    </div>
+                    <div class=" flex justify-between border border-[#EAE7EF] items-center  ">
+                        <input [type]="showconfirm ? 'text' : 'password'" class="w-[90%] py-2 pl-2"
+                            formControlName="confirmpassword">
+                        <button (click)="showconfirm = !showconfirm" class="w-[10%] cursor-pointer">
+
+                            @if (showconfirm) {
+                            <app-eyehide></app-eyehide>
+                            }
+                            @else {
+                            <app-eye></app-eye>
+                            }
+                        </button>
+                    </div>
+
+                    @if ( confirmpassword?.touched && confirmpassword?.invalid) {
+                    <div class="text-sm text-red-600">
+                        {{ confirmpassword?.errors | error:'confirmpassword'}}
+
+                    </div>
+                    }
+
+                    <div class="text-sm text-red-600"
+                        *ngIf="signupForm.errors?.['passwordMismatch'] && signupForm.touched">Passwords do not match
+                    </div>
+
+
+                </div>
+
+                <div class="flex gap-2 items-center">
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="hidden peer" formControlName="check" />
+
+
+
+                        <div class="w-5 h-5 border-2 border-gray-400 -md flex items-center justify-center
+              peer-checked:border-blue-600 peer-checked:bg-blue-600 transition-colors">
+
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                    </label>
+
+                    <p class="text-[16px] font-normal text-[#475156]">Are you agree to Clicon <a
+                            class="text-[16px] font-medium text-[#2DA5F3]">Terms of Condition </a>
+                        and <a href="" class="text-[16px] font-medium text-[#2DA5F3]">Privacy Policy</a></p>
+                </div>
+
+                @if (check?.touched) {
+                <div class="text-red-400">
+                    {{check?.errors | error:'check'}}
+                </div>
+                }
+            </div>
+
+
+
+
+            <div class="bg-[#FA8232] px-6 py-2 mx-8 flex items-center justify-center">
+                <button class="flex items-center gap-2 text-sm font-bold text-white" type="submit">
+                    SIGN UP
+                    <span><app-righticon></app-righticon></span>
+                </button>
+            </div>
+
+        </form>
+
+
+        <div class="flex flex-col gap-3 mx-8 ">
+
+            <div class="flex items-center gap-4 w-full">
+                <hr class="flex-grow border-gray-300" />
+                <span class="text-gray-500 text-sm whitespace-nowrap">or</span>
+                <hr class="flex-grow border-gray-300" />
+            </div>
+
+
+            <div class="relative border rounded border-[#E4E7E9] flex items-center justify-center px-4 py-2">
+                <app-google class="absolute left-4"></app-google>
+                <p class="text-sm font-normal text-[#475156]">Signup with Google</p>
+            </div>
+
+            <div class="relative border rounded border-[#E4E7E9] flex items-center justify-center px-4 py-2">
+                <app-apple class="absolute left-4"></app-apple>
+                <p class="text-sm font-normal text-[#475156]">Signup with Apple</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
