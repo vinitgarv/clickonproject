@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ProductService } from './product.service';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
@@ -9,39 +10,32 @@ export class CartService {
   private totalItemsSubject = new BehaviorSubject<number>(0);
   totalItems$ = this.totalItemsSubject.asObservable();
 
+  productservice:ProductService = inject(ProductService);
+
   constructor() {
-    const initialCart = [
-      {
-        id: 1, name: 'Canon EOS 1500D DSLR Camera',
-        price: 70,
-        quantity: 1,
-        image: 'TV.svg',
-        discount: 20,
-        tax: 20
-      },
-      {
-        id: 2,
-        name: 'Canon EOS 1500D DSLR Camera',
-        price: 150,
-        quantity: 1,
-        image: 'TV.svg',
-        discount: 30,
-        tax: 40
-      },
-    ];
+    const initialCart :any[] = [];
     this.cartItemsSubject.next(initialCart);
     this.updateTotalItemCount(initialCart);
   }
-
   updateTotalItemCount(products: any[]) {
     const uniqueCount = products.filter(item => item.quantity > 0).length;
     this.totalItemsSubject.next(uniqueCount);
   }
-
   getCartItems(): any[] {
     return this.cartItemsSubject.value;
   }
 
+    addToCart(product: any) {
+    const currentCart = this.getCartItems();
+    const index = currentCart.findIndex(p => p.id === product.id);
+    if (index > -1) {
+      currentCart[index].quantity += 1;
+    } else {
+      currentCart.push({ ...product, quantity: 1 });
+    }
+    this.cartItemsSubject.next([...currentCart]);
+    this.updateTotalItemCount(currentCart);
+  }
   removeFromCart(productId: number) {
     const updatedCart = this.getCartItems().filter(item => item.id !== productId);
     this.cartItemsSubject.next(updatedCart);
