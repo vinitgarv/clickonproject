@@ -1,4 +1,4 @@
-import { AbstractControl, EmailValidator, ValidationErrors } from '@angular/forms';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 export function minLengthValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value || '';
@@ -43,7 +43,6 @@ export function confirmpassword(control: AbstractControl): ValidationErrors | nu
 export function checkuserEmail(control: AbstractControl): Promise<any> {
     return userEmailAllowed(control.value);
 }
-
 
 function userEmailAllowed(email: string) {
     const takenEmail = ['g@gmail.com', 'garg@gmail.com', 'test@gmail.com'];
