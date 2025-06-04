@@ -22,8 +22,6 @@ export class CategoryComponent {
     { img: 'tv3.svg', title: 'Televisions' },
     { img: 'tv3.svg', title: 'Televisions' },
     { img: 'tv3.svg', title: 'Televisions' },
-
-
   ];
 
 

@@ -1,5 +1,4 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-
 export function minLengthValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value || '';
     return value.length < 8 ? { tooShort: true } : null;
@@ -29,7 +28,6 @@ export function codeValidator(control: AbstractControl): ValidationErrors | null
     const value = control.value || '';
     return !/[0-9]/.test(value) ? { misssingCode: true } : null;
 }
-
 
 export function confirmpassword(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password')?.value.trim();

@@ -77,6 +77,4 @@ addToCart(product: any) {
   isInCart(productId: number): boolean {
   return this.cartItemsSubject.value.some(item => item.id === productId);
 }
-  
-
 }

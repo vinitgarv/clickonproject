@@ -28,12 +28,7 @@
                     <app-catright></app-catright>
                 </button>
             </div>
-
-
-
-
         </div>
-
 
         <div class="flex flex-col gap-6">
             <div class="flex flex-col gap-4">
@@ -71,22 +66,18 @@
                         </p>
                     </div>
                 </div>
-
             </div>
-
 
             <div class="flex gap-3 items-center">
                 <div class="flex gap-1 items-center">
                     <p class="txt-[24px] text-[#2DA5F3] font-semibold">{{product.price}}</p>
                     <p class="line-through text-[18px] text-[#77878F] font-normal">$1999</p>
-
                 </div>
 
                 <div class="bg-[#EFD33D] px-[10px] py-[5px]">
                     <p class="text-sm font-semibold text-[#191C1F]">21% OFF</p>
                 </div>
             </div>
-
 
             <div class="flex flex-col gap-4 pr-2 md:pr-0">
                 <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
@@ -98,46 +89,33 @@
                         </div>
                     </div>
 
-
                     <div class="flex flex-col gap-2 flex-1">
                         <p class="text-sm text-[#191C1F] font-normal ">Size</p>
-
                         <select name="" id=""
                             class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
                             <option value="">14-inch Liquid Retina XDR display</option>
                         </select>
-
                     </div>
                 </div>
 
-
                 <div class="flex md:flex-row  flex-col gap-2 md:gap-6 md:items-center">
-
-
                     <div class="flex flex-col gap-2 flex-1">
                         <p class="text-sm text-[#191C1F] font-normal">Memory</p>
-
                         <select name="" id=""
                             class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
                             <option value="">16GB unified memory</option>
                         </select>
-
                     </div>
-
 
                     <div class="flex flex-col gap-2 flex-1">
                         <p class="text-sm text-[#191C1F] font-normal">Storage</p>
-
                         <select name="" id=""
                             class="px-4 py-3 border border-[#E4E7E9] flex-1 text-sm text-[#475156] font-normal">
                             <option value="">1TV SSD Storage</option>
-                        </select>
-
+                    </select>
                     </div>
                 </div>
             </div>
-
-
 
             <div class="flex md:flex-row flex-col md:gap-4 md:items-center pt-3 pr-2 md:pr-0">
                 <div class="flex gap-5 items-center justify-center py-4 px-5 border border-[#E4E7E9] min-w-[164px] ">
@@ -152,19 +130,15 @@
                     <app-basket></app-basket>
                 </button>
 
-                
                 <button  *ngIf = "isInCart()===true" (click)="goToCart()"
                     class ="flex gap-2 items-center justify-center bg-[#FA8232] px-8 py-4 md:min-w-[310px]  text-[16px] text-[#FFFFFF] font-bold">
                     GO TO CART
                     <app-basket></app-basket>
                 </button>
                 
-                  
-
                 <button class="px-8 py-4 min-w-[142px] border border-[#FA8232] text-[16px] font-bold text-[#FA8232]" (click)="onBuy()">BUY
                     NOW</button>
             </div>
-
 
             <div class="flex justify-between pb-2 items-center">
                 <div class="flex gap-6 items-center">
@@ -190,14 +164,11 @@
                 </div>
             </div>
 
-
             <div class="flex flex-col gap-3 border-t border-[#E4E7E9] p-5">
                 <p class="text-sm text-[#191C1F] font-normal">100% Guarantee Safe Checkout </p>
                 <img src="Payment Method.svg" alt="" class="max-w-[312px]">
-
             </div>
         </div>
     </div>
 }
- 
 </div>

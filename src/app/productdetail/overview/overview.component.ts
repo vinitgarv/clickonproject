@@ -16,44 +16,32 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../../Services/cart.service';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-overview',
   imports: [CatLeftComponent, CatRightComponent,
     StarFillComponent, MinusComponent, PlusComponent, CompareIconComponent, BasketComponent, TrackIconComponent
-    , TwitterComponent, RedditComponent, FacebookComponent, PinterestComponent,CommonModule],
+    ,TwitterComponent, RedditComponent, FacebookComponent, PinterestComponent,CommonModule],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.css'
 })
 export class OverviewComponent {
-
-
   @Input() product:any;
   quantity:number=1;
-  
   router:ActivatedRoute = inject(ActivatedRoute);
   route:Router =inject(Router)
   productService:ProductService = inject(ProductService);
   cartService:CartService = inject(CartService)
-
   products:any = this.productService.getAllProducts();
-
   ngOnInit() {
     const id = Number(this.router.snapshot.paramMap.get('id'));
-
     this.product = this.productService.getProductById(id);
   }
   addToCart() {
     const productToAdd = { ...this.product, quantity: this.quantity };
     this.cartService.addToCart(productToAdd);
   }
-
-
-
 goToCart() {
   this.route.navigate(['/cart'])
-
-
 }
    onPlus() {
     this.quantity++;
@@ -64,6 +52,7 @@ goToCart() {
       this.quantity--;
     }
   }
+
   isInCart(): boolean {
     return this.cartService.isInCart(this.product.id);
   }
@@ -72,6 +61,4 @@ goToCart() {
     this.addToCart();
     this.route.navigate(['/checkout'])
   }
- 
-
 }

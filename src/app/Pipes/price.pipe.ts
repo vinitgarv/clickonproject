@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
 @Pipe({
   name: 'cartTotal',
   pure: false
@@ -9,7 +8,6 @@ export class CartTotalPipe implements PipeTransform {
     let subtotal = 0;
     let tax = 0;
     let discount = 0;
-
     for (const item of products) {
       const quantity = item.quantity || 0;
       if (quantity >= 1) {
@@ -18,7 +16,6 @@ export class CartTotalPipe implements PipeTransform {
         discount += item.discount || 0;
       }
     }
-
     switch (type) {
       case 'subtotal':
         return subtotal;
