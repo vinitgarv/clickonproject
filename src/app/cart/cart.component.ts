@@ -55,6 +55,5 @@ export class CartComponent implements OnInit {
 
   removeItem(id:number) {
     this.cartService.removeFromCart(id)
-
   }
 }

@@ -49,7 +49,6 @@ addToCart(product: any) {
   this.updateLocalStorage(currentCart);
 }
 
-
   removeFromCart(productId: number) {
     const updatedCart = this.getCartItems().filter(item => item.id !== productId);
     this.cartItemsSubject.next(updatedCart);

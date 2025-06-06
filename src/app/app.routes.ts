@@ -24,6 +24,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 import { authGuard, noAuthGuard } from './Guards/auth.guard';
+import { SearchlistComponent } from './searchlist/searchlist.component';
 
 
 export const routes: Routes = [
@@ -47,6 +48,7 @@ export const routes: Routes = [
             { path: 'setting', component: SettingComponent }
         ]
     },
+    { path: 'search',component: SearchlistComponent},
 
     { path: 'trackdetail', component: TrackdetailComponent },
     { path: 'cart', component: CartComponent, canActivate: [authGuard] },

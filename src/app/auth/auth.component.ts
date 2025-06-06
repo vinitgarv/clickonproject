@@ -33,7 +33,7 @@ export class AuthComponent {
     password: new FormControl('', [Validators.required, minLengthValidator, uppercaseValidator, numberValidator, specialCharValidator])
   })
 
-  onSubmit() {
+  onLogin() {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -51,7 +51,6 @@ export class AuthComponent {
     else {
       alert('invalid user or password please try again')
     }
-
   }
 
   get email() {

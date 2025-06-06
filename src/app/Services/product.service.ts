@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-
   private products: any[] = [
     { id: 1,title: "Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear...",price: 2300, image: "drone.svg",  discount: 20,tax: 20, quantity:1, type: 'deal' },
     { id: 2, title: "Simple Mobile 4G LTE Prepaid Smartphone",price: 220,image: "Mobile1.svg",  discount: 30,tax: 40, quantity:1, type: 'deal' },
@@ -24,7 +23,6 @@ export class ProductService {
     { id: 15, title: "Dell Optiplex 7000x7480 All-in-One Computer Monitor",price: 250,image: "img27.svg",reviews: 426, discount: 30,tax: 40,quantity:1,  type: 'featured' },
     { id: 16,  title: "4K UHD LED Smart TV with Chromecast Built-in",price: 220,image: "img28.svg",reviews: 583, discount: 30,tax: 40,quantity:1,  type: 'featured' },
 
-
     { id: 17,title: "Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...", price: 360,image: "Head.svg",reviews: 738, discount: 30,tax: 40,quantity:1,  type: 'acc' },
     { id: 18, title: "Portable Wshing Machine, 11lbs capacity Model 18NMF...",price: 80,image: "Head2.svg",reviews: 538, discount: 30,tax: 40, quantity:1, type: 'acc' },
     { id: 19, title: "TOZO T6 True Wireless Earbuds Bluetooth Headphon....",price: 70,image: "Keyboard.svg",reviews: 423, discount: 30,tax: 40, quantity:1, type: 'acc' },
@@ -34,7 +32,6 @@ export class ProductService {
     { id: 23, title: "Wired Over-Ear Gaming Headphones with USB ",price: 1500,image: "PrinterWhite.svg",reviews: 426,  discount: 30,tax: 40,quantity:1,  type: 'acc' },
     { id: 24,  title: "Polaroid 57-Inch Photo/Video Tripod with Deluxe Tripod Ca...",price: 1200 ,image: "Washing.svg",reviews: 583,  discount: 30,tax: 40,quantity:1,  type: 'acc' }
   ];
-
 
   getAllProducts(): any[] {
     return this.products;
@@ -51,8 +48,23 @@ export class ProductService {
     getacc(): any[] {
     return this.products.filter(p => p.type === 'acc');
   }
-
+  
   getProductById(id:number) {
     return this.products.find(p => p.id === id);
   }
+
+searchProducts(term: string): any[] {
+  if (!term.trim()) {
+    return [];
+  }
+  term = term.toLowerCase().trim();
+  const startsWith = this.products.filter(p =>
+    p.title.toLowerCase().startsWith(term)
+  );
+
+  const includes = this.products.filter(p =>
+    p.title.toLowerCase().includes(term)
+  );
+  return [...startsWith, ...includes];
+}
 }

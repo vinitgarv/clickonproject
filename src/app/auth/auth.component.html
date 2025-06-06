@@ -12,16 +12,14 @@
                 Up</button>
         </div>
 
-        <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="flex flex-col gap-4">
+        <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin()" class="flex flex-col gap-4">
             <div class="flex flex-col gap-4 px-8">
 
-                <div>
+                <div>   
 
                     <div class="flex flex-col gap-2">
                         <label for="email" class="text-sm text-[#191C1F] font-normal  ">Email Address</label>
                         <input type="email" class="py-2 input-control " formControlName="email">
-
-
                     </div>
 
                     @if (email?.invalid && email?.touched) {
@@ -42,9 +40,9 @@
                     <div>
 
                         <div class=" flex justify-between border border-[#EAE7EF] items-center  ">
-                            <input [type]="showPassword ? 'text' : 'password'" class="w-[90%] py-2"
+                            <input [type]="showPassword ? 'text' : 'password'" class="w-[90%] py-2" placeholder="Enter Password"
                                 formControlName="password" />
-                            <button (click)="showPassword = !showPassword" class="w-[10%] cursor-pointer">
+                            <button (click)="showPassword = !showPassword" class="w-[10%] cursor-pointer" type="button">
 
                                 @if (showPassword) {
                                 <app-eyehide *ngIf="showPassword"></app-eyehide>
@@ -56,13 +54,8 @@
                         </div>
 
                         @if ( password?.touched ) {
-
                         <div class="text-sm text-red-600">
-
                             {{ password?.errors | error:'password'}}
-
-
-
                             <!-- 
                             @if (!password.errors?.['tooShort']) {
                             <p>Password
@@ -70,20 +63,16 @@
                                 characters.</p>
                             }
 
-
                             @if (!password.errors?.['missingUpperCase']) {
                             <p>Must contain at least one
                                 uppercase
                                 letter.</p>
                             }
 
-
                             @if (!password.errors?.['missingNumber']) {
                             <p>Must contain at least one
                                 number.</p>
                             }
-
-
 
                             @if (!password.errors?.['missingSpecialChar']) {
                             <p>Must contain at least one
@@ -91,20 +80,14 @@
                                 character.</p>
                             } -->
 
-
                         </div>
-
                         }
-
                     </div>
-
-
-
                 </div>
 
             </div>
-            <div class="bg-[#FA8232] px-6 py-2 mx-8 flex items-center justify-center">
-                <button class="flex items-center gap-2 text-sm font-bold text-white" type="submit">
+            <div class="bg-[#FA8232] px-6 py-2 mx-8 flex items-center justify-center" >
+                <button class="flex items-center gap-2 text-sm font-bold text-white" type="submit" >
 
                     SIGN IN
                     <!--  [disabled]="loginForm.invalid" -->

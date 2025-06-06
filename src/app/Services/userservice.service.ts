@@ -1,20 +1,14 @@
-
-// src/app/services/auth.service.ts
 import { inject, Injectable, signal } from '@angular/core';
 import { User } from '../Models/user';
 import { StorageService } from './localstorage.service';
 
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-
   storageService: StorageService = inject(StorageService)
   private localStorageKey = 'users';
   private currentUserKey = 'currentUser';
 
   currentUser = signal<User | null>(this.getCurrentUserFromStorage());
-
-
 
   private getUsers(): User[] {
     return JSON.parse(this.storageService.getItem(this.localStorageKey) || '[]');

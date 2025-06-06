@@ -32,9 +32,7 @@ export function codeValidator(control: AbstractControl): ValidationErrors | null
 export function confirmpassword(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password')?.value.trim();
     const confirmpassword = control.get('confirmpassword')?.value.trim();
-    console.log(password === confirmpassword)
     if (!password || !confirmpassword) return null;
-
     return password === confirmpassword ? null : { passwordMismatch: true };
 }
 
