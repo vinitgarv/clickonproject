@@ -22,10 +22,8 @@ import { CheckoutconfirmComponent } from './checkoutconfirm/checkoutconfirm.comp
 import { CompareComponent } from './compare/compare.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
-
 import { authGuard, noAuthGuard } from './Guards/auth.guard';
 import { SearchlistComponent } from './searchlist/searchlist.component';
-
 
 export const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -49,7 +47,6 @@ export const routes: Routes = [
         ]
     },
     { path: 'search',component: SearchlistComponent},
-
     { path: 'trackdetail', component: TrackdetailComponent },
     { path: 'cart', component: CartComponent, canActivate: [authGuard] },
     { path: 'checkout', component: CheckoutComponent },

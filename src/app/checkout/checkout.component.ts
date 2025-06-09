@@ -39,10 +39,6 @@ export class CheckoutComponent {
 
   onClick() {
     this.route.navigate(['/checkoutconfirm'])
+    alert('order Successfully placed')
   }
-
-
-
-
-
 }
